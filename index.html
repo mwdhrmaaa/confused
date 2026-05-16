@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith | Digital Experience</title>
+    <title>Zenith | Home</title>
     <meta name="description" content="Zenith - A premium digital experience playground.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,10 @@
     <nav>
         <div class="logo">ZENITH</div>
         <div class="nav-links">
-            <a href="#home" data-t="nav_home">Home</a>
-            <a href="#projects" data-t="nav_work">Work</a>
-            <a href="#about" data-t="nav_about">About</a>
-            <a href="#contact" data-t="nav_contact">Contact</a>
+            <a href="index.html" data-t="nav_home">Home</a>
+            <a href="work.html" data-t="nav_work">Work</a>
+            <a href="#" data-t="nav_about">About</a>
+            <a href="#" data-t="nav_contact">Contact</a>
             <button class="lang-switch" id="langToggle">
                 <span id="lang-en" class="active">EN</span>
                 <span id="lang-id">ID</span>
@@ -33,22 +33,7 @@
             <p class="reveal" style="animation-delay: 0.2s;" data-t="hero_desc">Crafting immersive experiences through cutting-edge design and modern technology. Experience the zenith of web development.</p>
             <div class="cta-group reveal" style="animation-delay: 0.4s;">
                 <a href="#" class="btn btn-primary" data-t="btn_start">Start Project</a>
-                <a href="#" class="btn btn-secondary" data-t="btn_view">View Showcase</a>
-            </div>
-        </section>
-
-        <section class="featured" id="projects">
-            <div class="card reveal" style="animation-delay: 0.1s;">
-                <h3 data-t="card1_title">Innovation</h3>
-                <p data-t="card1_desc">We push the boundaries of what's possible on the web, creating unique interactions that captivate users.</p>
-            </div>
-            <div class="card reveal" style="animation-delay: 0.2s;">
-                <h3 data-t="card2_title">Aesthetics</h3>
-                <p data-t="card2_desc">Beauty meets function. Every pixel is carefully placed to create a harmonious and premium visual language.</p>
-            </div>
-            <div class="card reveal" style="animation-delay: 0.3s;">
-                <h3 data-t="card3_title">Performance</h3>
-                <p data-t="card3_desc">Blazing fast load times and buttery smooth animations. We don't compromise on speed or quality.</p>
+                <a href="work.html" class="btn btn-secondary" data-t="btn_view">View Showcase</a>
             </div>
         </section>
     </main>
@@ -57,90 +42,6 @@
         <p data-t="footer_text">&copy; 2024 ZENITH Digital Studio. Built with passion.</p>
     </footer>
 
-    <script>
-        // Translations
-        const translations = {
-            en: {
-                nav_home: "Home",
-                nav_work: "Work",
-                nav_about: "About",
-                nav_contact: "Contact",
-                hero_title: 'Elevate Your <span>Digital</span> Presence',
-                hero_desc: "Crafting immersive experiences through cutting-edge design and modern technology. Experience the zenith of web development.",
-                btn_start: "Start Project",
-                btn_view: "View Showcase",
-                card1_title: "Innovation",
-                card1_desc: "We push the boundaries of what's possible on the web, creating unique interactions that captivate users.",
-                card2_title: "Aesthetics",
-                card2_desc: "Beauty meets function. Every pixel is carefully placed to create a harmonious and premium visual language.",
-                card3_title: "Performance",
-                card3_desc: "Blazing fast load times and buttery smooth animations. We don't compromise on speed or quality.",
-                footer_text: "&copy; 2024 ZENITH Digital Studio. Built with passion."
-            },
-            id: {
-                nav_home: "Beranda",
-                nav_work: "Karya",
-                nav_about: "Tentang",
-                nav_contact: "Kontak",
-                hero_title: 'Tingkatkan Kehadiran <span>Digital</span> Anda',
-                hero_desc: "Menciptakan pengalaman imersif melalui desain mutakhir dan teknologi modern. Rasakan puncak pengembangan web.",
-                btn_start: "Mulai Proyek",
-                btn_view: "Lihat Galeri",
-                card1_title: "Inovasi",
-                card1_desc: "Kami mendobrak batasan apa yang mungkin dilakukan di web, menciptakan interaksi unik yang memikat pengguna.",
-                card2_title: "Estetika",
-                card2_desc: "Keindahan bertemu fungsi. Setiap piksel ditempatkan dengan hati-hati untuk menciptakan bahasa visual yang harmonis dan premium.",
-                card3_title: "Performa",
-                card3_desc: "Waktu pemuatan yang sangat cepat dan animasi yang sangat halus. Kami tidak berkompromi pada kecepatan atau kualitas.",
-                footer_text: "&copy; 2024 ZENITH Digital Studio. Dibuat dengan penuh semangat."
-            }
-        };
-
-        let currentLang = 'en';
-
-        function updateLanguage() {
-            document.querySelectorAll('[data-t]').forEach(el => {
-                const key = el.getAttribute('data-t');
-                el.innerHTML = translations[currentLang][key];
-            });
-
-            document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
-            document.getElementById('lang-id').classList.toggle('active', currentLang === 'id');
-        }
-
-        document.getElementById('langToggle').addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'id' : 'en';
-            updateLanguage();
-        });
-
-        // Particle Background Effect
-        const bgGlow = document.querySelector('.bg-glow');
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.width = Math.random() * 3 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.setProperty('--duration', (Math.random() * 10 + 5) + 's');
-            particle.style.setProperty('--delay', (Math.random() * 5) + 's');
-            bgGlow.appendChild(particle);
-        }
-
-        // Intersection Observer for scroll reveal
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
