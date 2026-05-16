@@ -17,7 +17,12 @@ const translations = {
         card2_desc: "Beauty meets function. Every pixel is carefully placed to create a harmonious and premium visual language.",
         card3_title: "Performance",
         card3_desc: "Blazing fast load times and buttery smooth animations. We don't compromise on speed or quality.",
-        footer_text: "&copy; 2024 ZENITH Digital Studio. Built with passion."
+        footer_text: "&copy; 2024 ZENITH Digital Studio. Built with passion.",
+        modal_title: "Start Your <span>Project</span>",
+        form_name: "Full Name",
+        form_email: "Email Address",
+        form_msg: "Project Brief",
+        btn_send: "Send Proposal"
     },
     id: {
         nav_home: "Beranda",
@@ -36,7 +41,12 @@ const translations = {
         card2_desc: "Keindahan bertemu fungsi. Setiap piksel ditempatkan dengan hati-hati untuk menciptakan bahasa visual yang harmonis dan premium.",
         card3_title: "Performa",
         card3_desc: "Waktu pemuatan yang sangat cepat dan animasi yang sangat halus. Kami tidak berkompromi pada kecepatan atau kualitas.",
-        footer_text: "&copy; 2024 ZENITH Digital Studio. Dibuat dengan penuh semangat."
+        footer_text: "&copy; 2024 ZENITH Digital Studio. Dibuat dengan penuh semangat.",
+        modal_title: "Mulai <span>Proyek</span> Anda",
+        form_name: "Nama Lengkap",
+        form_email: "Alamat Email",
+        form_msg: "Ringkasan Proyek",
+        btn_send: "Kirim Proposal"
     }
 };
 
@@ -56,6 +66,34 @@ function updateLanguage() {
     if (idBtn) idBtn.classList.toggle('active', currentLang === 'id');
     
     localStorage.setItem('zenith_lang', currentLang);
+}
+
+// Modal Logic
+function initModal() {
+    const modal = document.getElementById('projectModal');
+    const triggers = document.querySelectorAll('[data-modal="project"]');
+    const closeBtn = document.querySelector('.close-modal');
+
+    if (!modal) return;
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
 }
 
 // Particle Background Effect
@@ -93,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLanguage();
     initParticles();
     initReveal();
+    initModal();
 
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {

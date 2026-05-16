@@ -32,11 +32,33 @@
             <h1 class="reveal" data-t="hero_title">Elevate Your <span>Digital</span> Presence</h1>
             <p class="reveal" style="animation-delay: 0.2s;" data-t="hero_desc">Crafting immersive experiences through cutting-edge design and modern technology. Experience the zenith of web development.</p>
             <div class="cta-group reveal" style="animation-delay: 0.4s;">
-                <a href="#" class="btn btn-primary" data-t="btn_start">Start Project</a>
+                <a href="#" class="btn btn-primary" data-t="btn_start" data-modal="project">Start Project</a>
                 <a href="work.html" class="btn btn-secondary" data-t="btn_view">View Showcase</a>
             </div>
         </section>
     </main>
+
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 data-t="modal_title">Start Your <span>Project</span></h2>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label data-t="form_name">Full Name</label>
+                    <input type="text" placeholder="..." required>
+                </div>
+                <div class="form-group">
+                    <label data-t="form_email">Email Address</label>
+                    <input type="email" placeholder="..." required>
+                </div>
+                <div class="form-group">
+                    <label data-t="form_msg">Project Brief</label>
+                    <textarea rows="4" placeholder="..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-t="btn_send">Send Proposal</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p data-t="footer_text">&copy; 2024 ZENITH Digital Studio. Built with passion.</p>
