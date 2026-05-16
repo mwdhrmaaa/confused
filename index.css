@@ -20,7 +20,7 @@ body {
     color: var(--text);
     font-family: var(--font-main);
     overflow-x: hidden;
-    min-height: 100-vh;
+    min-height: 100vh;
 }
 
 /* Background Animation */
@@ -158,6 +158,8 @@ nav {
 .cta-group {
     display: flex;
     gap: 1.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .btn {

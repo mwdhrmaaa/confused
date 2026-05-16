@@ -70,14 +70,21 @@ function updateLanguage() {
 
 // Modal Logic
 function initModal() {
+    console.log("Initializing Modal...");
     const modal = document.getElementById('projectModal');
     const triggers = document.querySelectorAll('[data-modal="project"]');
     const closeBtn = document.querySelector('.close-modal');
 
-    if (!modal) return;
+    if (!modal) {
+        console.error("Modal element not found!");
+        return;
+    }
+
+    console.log(`Found ${triggers.length} triggers`);
 
     triggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
+            console.log("Modal trigger clicked!");
             e.preventDefault();
             modal.classList.add('active');
         });
