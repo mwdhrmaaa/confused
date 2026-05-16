@@ -97,12 +97,14 @@ nav {
     letter-spacing: 2px;
     background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -142,6 +144,7 @@ nav {
 .hero h1 span {
     background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -234,6 +237,38 @@ nav {
 .card p {
     opacity: 0.7;
     line-height: 1.6;
+}
+
+/* Language Switcher */
+.lang-switch {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-switch:hover {
+    background: var(--glass-border);
+    border-color: var(--primary);
+}
+
+.lang-switch span {
+    opacity: 0.5;
+}
+
+.lang-switch span.active {
+    opacity: 1;
+    color: var(--primary);
 }
 
 /* Footer */
